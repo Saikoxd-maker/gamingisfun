@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden; /* Prevent overflow */
+        }
+        
+        .video-background {
+            position: fixed; /* Fixes video in place */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send video to the background */
+            overflow: hidden;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Ensure content is above the video */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white; /* Optional: change text color for better visibility */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #00ff40;
+            color: rgb(151, 39, 39);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: aqua;
+        }
+
+        h1 {
+            margin: 20px 0; /* Adjust margin for spacing */
+        }
+        
+        
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('userInfoForm').onsubmit = function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+
+                const data = { name, email };
+
+                fetch('/your-server-endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            };
+        });
+    </script>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="F:\hiii\Jujutsu Kaisen - On The Floor [Edit_AMV]  _ TY FOR 400K  💙🔥!.mp4" type="video/mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="content">
+        <h1>Contact</h1>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="tel" placeholder="Phone number" required>
+            <button type="submit">Submit</button>
+        </form>
+        <button onclick="location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex; /* Use flexbox for body */
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+        title{
+            color:#260cb7;
+            
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .content {
+            position: relative;
+            text-align: center;
+            color: white;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.99);
+            color: black;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: rgb(36, 68, 161);
+        }
+        
+        .flex-container {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center the items */
+            margin: 20px 0; /* Space around the container */
+        }
+
+        .Success, .content-t {
+            border: 2px solid #2600ff; /* Gold border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 20px; /* Space inside the border */
+            background-color: rgba(212, 210, 247, 0.8); /* Light background */
+            color: black; /* Text color */
+            max-width: 400px; /* Maximum width */
+            margin: 0 10px; /* Margin for spacing between boxes */
+        }
+        .content-t:hover{
+            background-color: aqua;
+        }
+        .Success:hover{
+            background-color: aqua;
+        }
+        
+        /* Specific style for content-t to have a different max-width */
+        .content-t {
+            max-width: 500px; /* Maximum width */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="F:\hiii\Jujutsu Kaisen - On The Floor [Edit_AMV]  _ TY FOR 400K  💙🔥!.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <h1>Home</h1>
+        <button onclick="location.href='F:\hii\index.html'">Home</button>
+        <button onclick="location.href='Contact.html'">Contact</button>
+    </div>
+
+    <div class="flex-container">
+        <div class="Success">
+            <h1>Best Games of 2018</h1>
+            <ul>
+                <li>Sekiro: The Shadow Die Twice</li>
+                <li>God Of War</li>
+                <li>Red Dead Redemption 2</li>
+                <li>Detroit: Become Human</li>
+                <!-- <button onclick="location.href='Contact.html'">pata nahi</button> -->
+            </ul>
+        </div>
+
+        <div class="content-t">
+            <h1>Top Mobile Games of All Time</h1>
+            <ul>
+                <li>PUBG Mobile</li>
+                <li>Free Fire</li>
+                <li>Minecraft</li>
+                <li>Call Of Duty Mobile</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
